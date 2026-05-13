@@ -94,7 +94,8 @@ a {
 
 .brand-mark {
   display: block;
-  width: 168px;
+  width: 134px;
+  /* aspect-ratio: 2.48 / 1; */  /* Mantiene proporción automáticamente */
   height: 54px;
   overflow: hidden;
   /*border: 1px solid rgba(255, 255, 255, 0.08);
@@ -108,6 +109,8 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  image-rendering: crisp-edges;  /* Evita interpolación suave */ /* Se agrego esto por el tema de la nitidez del logo en pantallas pequeñas */
+  /* image-rendering: -webkit-optimize-contrast; */  /* Para navegadores antiguos */
 }
 
 .brand > span:not(.brand-mark) {
@@ -420,6 +423,7 @@ h3 {
   height: 100%;
   display: block;
   object-fit: contain;
+  padding: 20px 0px 20px 0px;
 }
 
 .about-media {
@@ -955,6 +959,10 @@ h3 {
     width: min(1120px, calc(100% - 56px));
   }
 
+  .brand-mark img {
+    image-rendering: crisp-edges; /* Se agrego esto por el tema de la nitidez del logo en pantallas pequeñas */
+  }
+
   .menu-photo-grid {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
@@ -994,6 +1002,10 @@ h3 {
 @media (max-width: 760px) {
   .container {
     width: min(1120px, calc(100% - 40px));
+  }
+
+  .brand-mark img {
+    image-rendering: crisp-edges; /* Se agrego esto por el tema de la nitidez del logo en pantallas pequeñas */
   }
 
   .menu-photo-grid {
@@ -1141,6 +1153,10 @@ h3 {
   .brand-mark {
     width: 132px;
     height: 44px;
+  }
+
+  .brand-mark img {
+    image-rendering: crisp-edges; /* Se agrego esto por el tema de la nitidez del logo en pantallas pequeñas */
   }
 
   .hero-actions,
